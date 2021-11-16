@@ -6,14 +6,14 @@
   "configurations": [
     {
       "name": "Debug Android",
-      "cwd": "${workspaceFolder}/DoneWithIt",
+      "cwd": "${workspaceFolder}",
       "type": "reactnative",
       "request": "launch",
       "platform": "android"
     },
     {
       "name": "Attach to packager",
-      "cwd": "${workspaceFolder}/DoneWithIt",
+      "cwd": "${workspaceFolder}",
       "type": "reactnative",
       "request": "attach"
     }
