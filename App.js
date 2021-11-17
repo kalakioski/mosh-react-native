@@ -2,20 +2,22 @@ import React from "react";
 import { View, StyleSheet, StatusBar, Text } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import ViewImageScreen from "./app/screens/ViewImageScreen";
-import WelcomeScreen from "./app/screens/WelcomeScreen";
-import AppText from "./app/components/AppText";
+import Card from "./app/components/Card";
 
 export default function App() {
   return (
     <View
       style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
+        backgroundColor: "#f8f4f4",
+        padding: 20,
+        paddingTop: 100,
       }}
     >
-      <AppText>I love React Native!</AppText>
+      <Card
+        title="Red jacket for sale"
+        subTitle="€100"
+        image={require("./app/assets/jacket.jpg")}
+      />
     </View>
   );
 }
