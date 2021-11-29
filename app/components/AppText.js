@@ -11,11 +11,11 @@ const styles = StyleSheet.create({
     color: colors.black,
     ...Platform.select({
       ios: {
-        fontSize: 20,
+        fontSize: 18,
         fontFamily: "Avenir",
       },
       android: {
-        fontSize: 18,
+        fontSize: 16,
         fontFamily: "Roboto",
       },
     }),
