@@ -1,5 +1,5 @@
-import React from "react";
-import { View, StyleSheet, StatusBar, Text } from "react-native";
+import React, { useState } from "react";
+import { View, StyleSheet, StatusBar, Text, TextInput } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import Icon from "./app/components/Icon";
@@ -13,7 +13,22 @@ import AccountScreen from "./app/screens/AccountScreen";
 import ListingsScreen from "./app/screens/ListingsScreen";
 
 export default function App() {
-  return <ListingsScreen />;
+  const [FirstName, setFirstName] = useState("");
+
+  return (
+    <Screen>
+      <Text>{FirstName}</Text>
+      <TextInput
+        secureTextEntry
+        onChangeText={(text) => setFirstName(text)}
+        placeholder="First Name"
+        style={{
+          borderBottomColor: "#ccc",
+          borderBottomWidth: 1,
+        }}
+      />
+    </Screen>
+  );
 }
 
 const styles = StyleSheet.create({
