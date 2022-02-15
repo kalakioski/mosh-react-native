@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { View, StyleSheet, StatusBar, Text, TextInput } from "react-native";
+import {
+  View,
+  StyleSheet,
+  StatusBar,
+  Text,
+  TextInput,
+  Switch,
+} from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import Icon from "./app/components/Icon";
@@ -11,30 +18,14 @@ import MessagesScreen from "./app/screens/MessagesScreen";
 import ListItem from "./app/components/ListItem";
 import AccountScreen from "./app/screens/AccountScreen";
 import ListingsScreen from "./app/screens/ListingsScreen";
+import AppTextInput from "./app/components/AppTextInput";
 
 export default function App() {
-  const [FirstName, setFirstName] = useState("");
+  const [isNew, setIsNew] = useState(false);
 
   return (
     <Screen>
-      <Text>{FirstName}</Text>
-      <TextInput
-        secureTextEntry
-        onChangeText={(text) => setFirstName(text)}
-        placeholder="First Name"
-        style={{
-          borderBottomColor: "#ccc",
-          borderBottomWidth: 1,
-        }}
-      />
+      <Switch value={isNew} onValueChange={(newValue) => setIsNew(newValue)} />
     </Screen>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-  },
-});
